@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import TextInput from './Input';
+import ReduxInput from './ReduxedInput';
 
-class App extends Component {
+interface AppProps {
+  headerText: string
+}
+
+class App extends Component<AppProps> {
   render() {
     return (
       <div className="App">
-        <h1>App state from somewhere else</h1>
+        <h1>{this.props.headerText}</h1>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
-            <TextInput />
+            <ReduxInput />
         </header>
       </div>
     );
